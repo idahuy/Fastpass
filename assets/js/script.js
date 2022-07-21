@@ -18,6 +18,12 @@ function writePassword() {
     // determine the length of the password
     var length = prompt("Enter a number from 8 to 128 for password length.");
 
+      // loops until password conditions are met
+      if (length < 8 || length > 128) {
+        prompt("Enter a number from 8 to 128 for password length.");
+        return generatePassword();
+      };
+
     // determine whether or not the password will have lowercase
     var lowercase = confirm("Would you like to use lowercase letters?");
       if (lowercase == true) {
@@ -39,6 +45,12 @@ function writePassword() {
       if (numbers == true) {
         passwordCharSet += nums;
       };
+
+    // this will loop back to the beginning if user does not pick at least one of the above conditions
+    if (passwordCharSet === "") {
+      alert("Please pick at least one");
+      return generatePassword();
+    }
     // var for the start of the password which is null
     var pass = "";
     // get the length and randomize passwordCharSet from the given set of strings for each array selected
