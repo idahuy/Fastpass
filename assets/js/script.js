@@ -1,45 +1,37 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Arrays for all the characters needed
 var nums = "0123456789";
 var symb = "!@#$%^&*()";
 var lower = "abcdefghijklmnopqrstuvwxyz";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-
 // Write password to the #password input
 function writePassword() {
 
+  // create a function for generatePassword
   var generatePassword = function() {
-    passwordCharSet = "";
+    // set list of possible characters that can be used into its own string
+    passwordCharSet = ""; 
 
-    var length = window.prompt("Enter a number from 8 to 128 for password length.");
+    // determine the length of the password
 
-    var lowercase = window.confirm("Would you like to use lowercase letters?");
-      if (lowercase == true) {
-        passwordCharSet += lower;
-    };
+    // determine whether or not the password will have lowercase
 
-    var uppercase = window.confirm("Would you like to use uppercase letters?");
-      if (uppercase == true) {
-        passwordCharSet += upper;
-    };
+    // determine whether or not the password will have uppercase
 
-    var symbols = window.confirm("Would you like to use symbols?");
-      if (symbols == true) {
-        passwordCharSet += symb;
-    };
+    // determine whether or not the password will have symbols
 
-    var numbers = window.confirm("Would you like to use numbers?");
-      if (numbers == true) {
-        passwordCharSet += nums;
-    };
+    // determine whether or not the password will have number
 
-    var pass = "";
-    for (let i = 0; i < length; i++) {pass += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
-    }
-    return pass;
+    // var for the start of the password which is null
+
+    // get the length and randomize passwordCharSet from the given set of strings for each array selected
+
+
   }
+
 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
